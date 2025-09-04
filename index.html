@@ -11,10 +11,10 @@
     <main>
         <img src="1648424692_14616_gif-url.gif" alt="" width="250px" id="gif_img">
         <div class="text">
-            <h1>Do you Love me </h1>
+            <h1 id="txt">Do you Love me </h1>
         </div>
         <div class="click">
-            <button id="btnYes">Yes</button>
+            <button id="btnYes" onclick="funBtnYes()">Yes</button>
             <button id="btnNo" onclick="funBtnNO()">No</button>
         </div>
     </main>
@@ -22,6 +22,8 @@
     <script>
 
         const btnNo = document.getElementById("btnNo");
+        const img = document.getElementById("gif_img");
+        const text = document.getElementById("txt");
         let randomN = new Array(130,-130,50,-50,80,-80,30,-30);
         let randomst = new Array("right","left",);
         let lastN = null;
@@ -45,6 +47,28 @@
 
         btnNo.style.top = newN + "px";
         btnNo.style[newst] = (newN - 50) + "px";
+    }
+
+    function funBtnYes(){
+        // console.dir(img);
+        // console.log(img.attributes[0].nodeValue);
+        img.attributes[0].nodeValue = "cute.gif";
+        text.textContent = "I Love you too";
+
+        let countN = 5;
+
+            btnNo.addEventListener("click",()=>{
+                countN = countN -1;
+
+                img.attributes[0].nodeValue = "sad.gif";
+                text.textContent = "Click yes please";
+                
+                if(countN === 0){
+                    btnNo.style.display = "none";
+                    img.attributes[0].nodeValue = "hehe.gif";
+                    text.textContent = "hehehehehehe";
+                }
+            })
     }
 
 
