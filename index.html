@@ -22,8 +22,8 @@
     <script>
 
         const btnNo = document.getElementById("btnNo");
-        let randomN = new Array(39,70,-20,-150,-10,30);
-        let randomst = new Array("top","left",);
+        let randomN = new Array(130,-130);
+        // let randomst = new Array("top","left",);
         let lastN = null;
         let lastst = null;
 
@@ -38,12 +38,12 @@
         lastN = newN; 
         
 
-        do {
-               newst = randomst[Math.floor(Math.random() * randomst.length)];
-            } while (newst === lastst);
-            lastst = newst;
+        // do {
+            //    newst = randomst[Math.floor(Math.random() * randomst.length)];
+            // } while (newst === lastst);
+            // lastst = newst;
 
-        btnNo.style[newst] = newN + "px";
+        btnNo.style.top = newN + "px";
         console.log(newst)
     }
 
