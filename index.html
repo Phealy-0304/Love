@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    
+    <main>
+        <img src="1648424692_14616_gif-url.gif" alt="" width="250px" id="gif_img">
+        <div class="text">
+            <h1>Do you Love me </h1>
+        </div>
+        <div class="click">
+            <button id="btnYes">Yes</button>
+            <button id="btnNo" onclick="funBtnNO()">No</button>
+        </div>
+    </main>
+
+    <script>
+
+        const btnNo = document.getElementById("btnNo");
+        let randomN = new Array(39,70,-20,-150,-10,30);
+        let randomst = new Array("top","left",);
+        let lastN = null;
+        let lastst = null;
+
+        
+        
+    function funBtnNO() {
+        let newN;
+            do {
+                newN = randomN[Math.floor(Math.random() * randomN.length)];
+            } while (newN === lastN); 
+
+        lastN = newN; 
+        
+
+        do {
+               newst = randomst[Math.floor(Math.random() * randomst.length)];
+            } while (newst === lastst);
+            lastst = newst;
+
+        btnNo.style[newst] = newN + "px";
+        console.log(newst)
+    }
+
+
+    </script>
+</body>
+</html>
